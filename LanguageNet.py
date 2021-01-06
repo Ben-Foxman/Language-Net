@@ -1,3 +1,5 @@
+# A simple langauge network, which classifies candidate "words" into English, Spanish, or German.
+
 import numpy as np
 import math
 
@@ -7,58 +9,7 @@ def encode(word):
     counter = 0
     word = word.lower().replace(" ", "")
     for char in word:
-        if char == 'a':
-            encoded_array[counter] = 1
-        elif char == 'b':
-            encoded_array[counter + 1] = 1
-        elif char == 'c':
-            encoded_array[counter + 2] = 1
-        elif char == 'd':
-            encoded_array[counter + 3] = 1
-        elif char == 'e':
-            encoded_array[counter + 4] = 1
-        elif char == 'f':
-            encoded_array[counter + 5] = 1
-        elif char == 'g':
-            encoded_array[counter + 6] = 1
-        elif char == 'h':
-            encoded_array[counter + 7] = 1
-        elif char == 'i':
-            encoded_array[counter + 8] = 1
-        elif char == 'j':
-            encoded_array[counter + 9] = 1
-        elif char == 'k':
-            encoded_array[counter + 10] = 1
-        elif char == 'l':
-            encoded_array[counter + 11] = 1
-        elif char == 'm':
-            encoded_array[counter + 12] = 1
-        elif char == 'n':
-            encoded_array[counter + 13] = 1
-        elif char == 'o':
-            encoded_array[counter + 14] = 1
-        elif char == 'p':
-            encoded_array[counter + 15] = 1
-        elif char == 'q':
-            encoded_array[counter + 16] = 1
-        elif char == 'r':
-            encoded_array[counter + 17] = 1
-        elif char == 's':
-            encoded_array[counter + 18] = 1
-        elif char == 't':
-            encoded_array[counter + 19] = 1
-        elif char == 'u':
-            encoded_array[counter + 20] = 1
-        elif char == 'v':
-            encoded_array[counter + 21] = 1
-        elif char == 'w':
-            encoded_array[counter + 22] = 1
-        elif char == 'x':
-            encoded_array[counter + 23] = 1
-        elif char == 'y':
-            encoded_array[counter + 24] = 1
-        elif char == 'z':
-            encoded_array[counter + 25] = 1
+        encoded_array[counter + int(char) - 96] = 1 # use one-hot encoding on the characters
         counter += 26
     return encoded_array
 
